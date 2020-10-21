@@ -22,9 +22,15 @@ const ItemsCarousel = ({ history, match }) => {
                 responsive={{
                     0: {
                         items: 1,
+                        stagePadding: 0
                     },
-                    1001: {
-                        items: 2
+                    500: {
+                        items: 1,
+                        stagePadding: 100
+                    },
+                    900: {
+                        items: 1,
+                        stagePadding: 200
                     }
                 }}
             >
@@ -48,21 +54,33 @@ const ItemscarouselWrapper = styled.div`
     .owl-theme {
         padding: 0;
         text-align: justify;
+        /* width: 90vw;
+        margin: auto; */
     }
     .owl-theme .owl-dots .owl-dot span {
-        border: 1px solid violet;
+        border: 1px solid blue;
         width: 30px;
         height: 5px;        
-        outline: none;
+        outline: none !important;
         margin: 0;
         background: white;
     }
     .owl-theme .owl-dots .owl-dot.active span, 
     .owl-theme .owl-dots .owl-dot:hover span {
-        outline: none;
-        background: blueviolet;
+        outline: none !important;
+        background: blue;
         border: none;
     }
+    .owl-item {
+        margin-right: 0;
+    }
+    .item {
+        box-shadow: 0px 2.5px 10px grey;
+        border-radius: 2rem;
+        width: calc(100% - 10px) !important;
+        margin: 1rem 0 !important;
+    }
+
     .owl-dot {
         margin: 0 0.5rem;
     }
@@ -76,10 +94,11 @@ const ItemscarouselWrapper = styled.div`
     .item img {
         width: 100%;
         height: 100%;
+        border-radius: 2rem;
     }
     @media(min-width: 701px) {
         .item {
-            height:70vh;
+            height:50vh;
             /* width: 80%;
             margin: 0 auto; */
         }

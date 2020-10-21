@@ -14,7 +14,7 @@ const HeroWrapper = styled.div`
     display: flex;
     justify-content: center;
     img {
-        max-height: 50vh;
+        max-height: 70vh;
     }
 `
 

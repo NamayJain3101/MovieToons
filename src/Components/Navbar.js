@@ -62,13 +62,13 @@ const NavWrapper = styled.header`
     /* color: black; */
     #main-nav {
         background: #ffffff;
-        color: #444444;
+        color: black;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        /* box-shadow: 2px 2px 4px #d1e4f0; */
-        background: lightcyan;
+        border-bottom: 4px solid black;
+        background: rgba(255, 99, 71, 0.7);
         z-index: 1;
         padding: 1rem;
         display: flex;
@@ -101,7 +101,7 @@ const NavWrapper = styled.header`
     #main-nav ul li a:link,
     #main-nav ul li a:visited{
         text-decoration: none;
-        color: #444444;
+        color: black;
         padding: 1rem 0.6rem;
         margin: 0 0.50rem;
         transition: border-bottom 0.2s;
