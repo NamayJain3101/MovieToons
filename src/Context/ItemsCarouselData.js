@@ -1,6 +1,6 @@
-import GamesImage from '../Assets/games.png'
-import QuizImage from '../Assets/Quiz.png'
-import LearningImage from '../Assets/learning.png'
+import GamesImage from '../Assets/Hero/games.png'
+import QuizImage from '../Assets/Hero/quizzes.png'
+import LearningImage from '../Assets/Hero/learning.png'
 import CartoonImage from '../Assets/New folder/panda-1892023.png'
 export const ItemsCarouselData = [{
         id: 1,

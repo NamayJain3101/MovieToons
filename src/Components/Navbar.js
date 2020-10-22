@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { NavLinksData } from '../Context/NavLinksData'
 
+import GrassImg from '../Assets/grass.png'
 export default class Navbar extends Component {
 
     closeNavbar = () => {
@@ -19,7 +20,7 @@ export default class Navbar extends Component {
                             NavLinksData.map(link => {
                                 return (
                                     <li key={link.id}>
-                                        <Link to={link.path}>
+                                        <Link to={link.path} style={{ color: `${link.color}` }}>
                                             {link.icon}
                                             {link.text.toUpperCase()}
                                         </Link>
@@ -29,6 +30,7 @@ export default class Navbar extends Component {
                         }
                     </ul>
                 </nav>
+                <h1 className="logo">MOVIETOONS</h1>
                 <div className="menu-wrap">
                     <input type="checkbox" className="toggler" />
                     <div className="hamburger"><div></div></div>
@@ -53,22 +55,45 @@ export default class Navbar extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="grass-border" />
             </NavWrapper>
         )
     }
 }
 
 const NavWrapper = styled.header`
-    /* color: black; */
+    position: relative;
+    .grass-border {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        border: 0px;
+        left: 0;
+        background: url(${GrassImg});
+        background-repeat: repeat-x;
+        margin-top: -1.6rem;
+        z-index: 1;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: right;
+        padding: 0.5rem;
+        position: fixed;
+        right: 0;
+        top: 1.5rem;
+        line-height: 1;
+    }
+
     #main-nav {
         background: #ffffff;
-        color: black;
+        color: #000000;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        border-bottom: 4px solid black;
-        background: rgba(255, 99, 71, 0.7);
+        background: white;
         z-index: 1;
         padding: 1rem;
         display: flex;
@@ -98,12 +123,18 @@ const NavWrapper = styled.header`
         align-items: center;
     }
 
+    #main-nav ul li:hover {
+        transform: scale(1.2);
+    }
+
     #main-nav ul li a:link,
     #main-nav ul li a:visited{
         text-decoration: none;
-        color: black;
+        color: #000000;
         padding: 1rem 0.6rem;
         margin: 0 0.50rem;
+        line-height: 2;
+        /* letter-spacing: 2px; */
         transition: border-bottom 0.2s;
         display: flex;
         align-items: center;
@@ -112,20 +143,19 @@ const NavWrapper = styled.header`
     }
 
     #main-nav ul li a .link-icon {
-        font-size: 1.4em;
+        font-size: 1.8em;
     }
 
     .menu-wrap{
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 9999;
+        z-index: 99999;
     }
 
     .menu-wrap .toggler{
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 1.5rem;
         z-index: 2;
         cursor: pointer;
         width: 50px;
@@ -135,7 +165,7 @@ const NavWrapper = styled.header`
 
     .menu-wrap .hamburger{ 
         position: absolute;
-        top: 0;
+        top: 1.5rem;
         left: 0;
         z-index: 1;
         width: 60px;
@@ -152,7 +182,7 @@ const NavWrapper = styled.header`
         flex: none;
         width: 100%;
         height: 3px;
-        background: #888888;
+        background: black;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -279,6 +309,9 @@ const NavWrapper = styled.header`
         }
         #main-nav ul li a .link-icon {
             margin-right: 0.6rem;
+        }
+        .grass-border {
+            top: 7rem;
         }
     }
 `

@@ -54,13 +54,11 @@ const ItemscarouselWrapper = styled.div`
     .owl-theme {
         padding: 0;
         text-align: justify;
-        /* width: 90vw;
-        margin: auto; */
     }
     .owl-theme .owl-dots .owl-dot span {
         border: 1px solid blue;
         width: 30px;
-        height: 5px;        
+        height: 7px;        
         outline: none !important;
         margin: 0;
         background: white;
@@ -73,19 +71,24 @@ const ItemscarouselWrapper = styled.div`
     }
     .owl-item {
         margin-right: 0;
+        padding: 0 15px;
     }
     .item {
         box-shadow: 0px 2.5px 10px grey;
         border-radius: 2rem;
-        width: calc(100% - 10px) !important;
+        width: 100% !important;
         margin: 1rem 0 !important;
+        height: 30vh;
+        overflow: hidden;
     }
-
+    .item:hover {
+        cursor: pointer;
+    }
     .owl-dot {
         margin: 0 0.5rem;
     }
-    .item {
-        height:50vh;
+    .owl-theme .owl-dots {
+        margin: 0 !important;
     }
     .item h3 {
         line-height: 1.5;
@@ -95,12 +98,14 @@ const ItemscarouselWrapper = styled.div`
         width: 100%;
         height: 100%;
         border-radius: 2rem;
+        transition: all 1s ease-in-out;
     }
-    @media(min-width: 701px) {
+    .item:hover img {
+        transform: scale(1.1);
+    }
+    @media(min-width: 801px) {
         .item {
-            height:50vh;
-            /* width: 80%;
-            margin: 0 auto; */
+            height:40vh;
         }
     }
 `
