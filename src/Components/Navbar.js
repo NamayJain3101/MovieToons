@@ -42,7 +42,7 @@ export default class Navbar extends Component {
                                         NavLinksData.map(link => {
                                             return (
                                                 <li key={link.id} onClick={this.closeNavbar}>
-                                                    <Link to={link.path}>
+                                                    <Link to={link.path} style={{ color: `${link.color}` }}>
                                                         {link.icon}
                                                         {link.text.toUpperCase()}
                                                     </Link>
@@ -63,27 +63,27 @@ export default class Navbar extends Component {
 
 const NavWrapper = styled.header`
     position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     .grass-border {
         content: '';
         width: 100%;
-        height: 100%;
+        height: 30px;
         position: fixed;
         border: 0px;
         left: 0;
         background: url(${GrassImg});
         background-repeat: repeat-x;
         margin-top: -1.6rem;
-        z-index: 1;
+        z-index: 9999;
     }
 
     .logo {
-        width: 100%;
-        text-align: right;
         padding: 0.5rem;
         position: fixed;
         right: 0;
         top: 1.5rem;
         line-height: 1;
+        z-index: 99999;
     }
 
     #main-nav {
@@ -94,7 +94,7 @@ const NavWrapper = styled.header`
         left: 0;
         width: 100%;
         background: white;
-        z-index: 1;
+        z-index: 9999;
         padding: 1rem;
         display: flex;
         justify-content: space-between;
@@ -150,7 +150,10 @@ const NavWrapper = styled.header`
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 99999;
+        z-index: 9999;
+        width: 100%;
+        height: 115px;
+        background: white;
     }
 
     .menu-wrap .toggler{
@@ -236,6 +239,10 @@ const NavWrapper = styled.header`
         transition-duration: 1s;
     }
 
+    /* .menu-wrap .toggler:checked ~ .grass-border{
+        display: none;
+    } */
+
     .menu-wrap .toggler:checked ~ .menu > div > div{
         opacity: 1;
         transition: opacity 0.4s ease 0.4s;
@@ -256,7 +263,6 @@ const NavWrapper = styled.header`
 
     .menu-wrap .menu > div{
         background: rgba(197, 226, 243, 1);
-        /* background: white; */
         border-radius: 50%;
         width: 200vw;
         height: 220vw;
@@ -278,7 +284,6 @@ const NavWrapper = styled.header`
 
     .menu-wrap .menu > div > div > ul > li{
         list-style: none;
-        color: #444444;
         font-size: 1.5rem;
         padding: 1rem;
     }
@@ -287,6 +292,9 @@ const NavWrapper = styled.header`
         color: inherit;
         text-decoration: none;
         transition: color 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .menu-wrap .menu > div > div > ul > li > a > .link-icon {
@@ -294,11 +302,14 @@ const NavWrapper = styled.header`
     }
 
     .menu-wrap .menu > div > div > ul > li > a:hover {
-        color: #888888;
+        transform: scale(1.2);
     }
 
     @media(min-width: 701px) {
         .menu-wrap {
+            display: none;
+        }
+        .logo {
             display: none;
         }
     }

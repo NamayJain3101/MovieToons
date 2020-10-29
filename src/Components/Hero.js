@@ -13,8 +13,9 @@ const Hero = ({ children, img, title, subtitle, max }) => {
 const HeroWrapper = styled.div`
     display: flex;
     justify-content: center;
-    img {
-        max-height: 70vh;
+    height: 30vh;
+    @media(min-width: 701px) {
+        height: 60vh;
     }
 `
 

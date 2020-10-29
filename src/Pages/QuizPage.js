@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from '../Components/Hero'
 
-import QuizImage from '../Assets/Quiz.png'
+import QuizImage from '../Assets/Hero/quizzes.png'
 
 const QuizPage = () => {
     return (

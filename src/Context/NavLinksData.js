@@ -9,34 +9,34 @@ export const NavLinksData = [{
     text: 'home',
     path: '/',
     icon: <GoHome className='link-icon' />,
-    color: 'red'
+    color: 'green'
 },
 {
     id: 2,
-    text: 'cartoons',
-    path: '/cartoons',
-    icon: <MdOndemandVideo className='link-icon' />,
-    color: 'green'
+    text: 'games',
+    path: '/games',
+    icon: <CgGames className='link-icon' />,
+    color: 'orangered'
 },
 {
     id: 3,
     text: 'quiz',
     path: '/quiz',
     icon: <FiEdit3 className='link-icon' />,
-    color: 'purple'
+    color: 'blue'
 },
 {
     id: 4,
-    text: 'games',
-    path: '/games',
-    icon: <CgGames className='link-icon' />,
-    color: 'blue'
+    text: 'cartoons',
+    path: '/cartoons',
+    icon: <MdOndemandVideo className='link-icon' />,
+    color: 'purple'
 },
 {
     id: 5,
     text: 'learning',
     path: '/learning',
     icon: <BiBookReader className='link-icon' />,
-    color: 'orange'
+    color: 'red'
 }
 ]

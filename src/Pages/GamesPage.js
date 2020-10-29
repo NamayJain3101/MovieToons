@@ -1,7 +1,7 @@
 import React from 'react'
-
-import GamesImage from '../Assets/games.png'
 import Hero from '../Components/Hero'
+
+import GamesImage from '../Assets/Hero/games.png'
 
 const GamesPage = () => {
     return (

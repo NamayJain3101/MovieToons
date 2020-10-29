@@ -56,7 +56,7 @@ const ItemscarouselWrapper = styled.div`
         text-align: justify;
     }
     .owl-theme .owl-dots .owl-dot span {
-        border: 1px solid blue;
+        border: 1px solid green;
         width: 30px;
         height: 7px;        
         outline: none !important;
@@ -66,7 +66,7 @@ const ItemscarouselWrapper = styled.div`
     .owl-theme .owl-dots .owl-dot.active span, 
     .owl-theme .owl-dots .owl-dot:hover span {
         outline: none !important;
-        background: blue;
+        background: green;
         border: none;
     }
     .owl-item {
