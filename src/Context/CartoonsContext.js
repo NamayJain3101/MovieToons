@@ -14,7 +14,7 @@ class CartoonsProvider extends Component {
         cartoon: ''
     }
 
-    getData = async() => {
+    getData = async () => {
         try {
             let response = await CartoonsClient.getEntries({
                 content_type: "movieToonsCartoons"
@@ -27,7 +27,8 @@ class CartoonsProvider extends Component {
                 sortedCartoons: cartoons,
                 loading: false
             })
-        } catch (error) {
+        }
+        catch (error) {
             console.log(error);
         }
     }
@@ -50,7 +51,7 @@ class CartoonsProvider extends Component {
                     })
                 })
             }
-            let season = {...item.fields, image, id, episodes };
+            let season = { ...item.fields, image, id, episodes };
             return season;
         })
         return tempItems;
@@ -89,8 +90,7 @@ class CartoonsProvider extends Component {
 
     filterCartoons = () => {
         let {
-            cartoons,
-            cartoon
+            cartoons, cartoon
         } = this.state;
         let tempCartoons = [...cartoons];
         console.log(tempCartoons)
@@ -108,16 +108,15 @@ class CartoonsProvider extends Component {
     }
 
     render() {
-        return ( <
-            CartoonsContext.Provider value = {
-                {
-                    ...this.state,
-                        getCartoon: this.getCartoon,
-                        getEpisode: this.getEpisode,
-                        handleChange: this.handleChange
-                }
-            } > { this.props.children } <
-            /CartoonsContext.Provider>
+        return (
+            <CartoonsContext.Provider value={{
+                ...this.state,
+                getCartoon: this.getCartoon,
+                getEpisode: this.getEpisode,
+                handleChange: this.handleChange
+            }}>
+                {this.props.children}
+            </CartoonsContext.Provider>
         )
     }
 }
@@ -125,3 +124,5 @@ class CartoonsProvider extends Component {
 const CartoonsConsumer = CartoonsContext.Consumer;
 
 export { CartoonsProvider, CartoonsConsumer, CartoonsContext };
+
+
