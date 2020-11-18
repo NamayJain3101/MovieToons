@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 *:focus {
@@ -11,6 +16,88 @@
 body {
     margin-top: 120px;
     background: white;
+}
+
+.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: var(--mainSpacing);
+    color: white;
+    font-weight: bold;
+    background: transparent;
+    padding: 0.4rem 0.9rem;
+    border: 2px solid pink;
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: var(--mainSpacing);
+    color: black;
+    font-weight: bold;
+    background: plum;
+    padding: 0.4rem 0.9rem;
+    border: 2px solid black;
+    transition: var(--mainTransition);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--primaryColor);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: blueviolet;
+    color: white;
+}
+
+.btn-center {
+    text-align: center;
+    margin: 4rem;
+}
+
+.error {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+.loading {
+    text-transform: capitalize;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.empty-search {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 2rem 0;
+    padding: 1rem;
+    letter-spacing: var(--mainSpacing);
+}
+
+.section-title {
+    text-align: center;
+    margin: auto 2rem;
+    margin-top: 2rem;
+}
+
+.section-title h1 {
+    letter-spacing: var(--mainSpacing);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.section-title div {
+    width: 10rem;
+    height: 5px;
+    margin: 0 auto;
+    background: var(--primaryColor);
 }
 
 @media(max-width: 700px) {
