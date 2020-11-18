@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '../Components/Hero'
-import CartoonImg from '../Assets/Hero/cartoons.png'
+import CartoonImg from '../Assets/Hero/cartoon.png'
 import AllCartoons from '../Components/CartoonsPage/AllCartoons'
 
 const CartoonPage = () => {

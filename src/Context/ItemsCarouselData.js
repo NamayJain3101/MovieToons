@@ -1,7 +1,7 @@
 import GamesImage from '../Assets/Hero/games.png'
 import QuizImage from '../Assets/Hero/quizzes.png'
 import LearningImage from '../Assets/Hero/learning.png'
-import CartoonImage from '../Assets/Hero/cartoons.png'
+import CartoonImage from '../Assets/Hero/cartoon.png'
 export const ItemsCarouselData = [{
         id: 1,
         text: 'games',
