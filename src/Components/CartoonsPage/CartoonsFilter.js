@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import styled from 'styled-components'
 import { CartoonsConsumer } from '../../Context/CartoonsContext'
 import Title from '../Title'
