@@ -8,7 +8,7 @@ const LearningVideosFilter = ({ learning }) => {
         <LearningVideoFilterWrapper>
             <LearningConsumer>
                 {value => {
-                    const { handleChange, name, language } = value
+                    const { handleChange, name } = value
                     return (
                         <section className="filter-container">
                             <section style={{ marginBottom: '2rem' }}>
