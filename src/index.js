@@ -5,13 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { CartoonsProvider } from './Context/CartoonsContext';
+import { LearningProvider } from './Context/LearningContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <CartoonsProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <LearningProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </LearningProvider>
     </CartoonsProvider>
   </React.StrictMode>,
   document.getElementById('root')

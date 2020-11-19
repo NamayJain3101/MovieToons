@@ -12,6 +12,7 @@ import QuizPage from './Pages/QuizPage';
 import LearningPage from './Pages/LearningPage';
 import CartoonsEpisodesPage from './Pages/CartoonsEpisodesPage';
 import CartoonVideoPage from './Pages/CartoonVideoPage';
+import LearningVideoPage from './Pages/LearningVideoPage';
 
 class App extends Component {
 	render() {
@@ -26,6 +27,7 @@ class App extends Component {
 					<Route exact path='/quiz' component={QuizPage} />
 					<Route exact path='/games' component={GamesPage} />
 					<Route exact path='/learning' component={LearningPage} />
+					<Route exact path='/learning/:name' component={LearningVideoPage} />
 					<Route component={ErrorPage} />
 				</Switch>
 			</React.Fragment>

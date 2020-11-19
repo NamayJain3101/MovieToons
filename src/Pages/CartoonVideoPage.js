@@ -35,7 +35,7 @@ const CartoonVideoPage = ({ match }) => {
                     if (!episode) {
                         return <div className="error">
                             <h3>No Episode Found</h3>
-                            <Link to='/seasons' className="btn-secondary">Back to Seasons</Link>
+                            <Link to='/cartoons' className="btn-secondary">Back to Seasons</Link>
                         </div>
                     }
 

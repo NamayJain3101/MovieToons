@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CartoonsClient } from '../contentful'
+import { Client } from '../contentful'
 
 const CartoonsContext = React.createContext();
 
@@ -16,7 +16,7 @@ class CartoonsProvider extends Component {
 
     getData = async () => {
         try {
-            let response = await CartoonsClient.getEntries({
+            let response = await Client.getEntries({
                 content_type: "movieToonsCartoons"
             });
             let cartoons = this.formatData(response.items);
@@ -93,7 +93,6 @@ class CartoonsProvider extends Component {
             cartoons, cartoon
         } = this.state;
         let tempCartoons = [...cartoons];
-        console.log(tempCartoons)
 
         if (cartoon.length > 0) {
             tempCartoons = tempCartoons.filter(item => {
