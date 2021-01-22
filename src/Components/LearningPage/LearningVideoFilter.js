@@ -8,7 +8,7 @@ const LearningVideosFilter = ({ learning }) => {
         <LearningVideoFilterWrapper>
             <LearningConsumer>
                 {value => {
-                    const { handleChange, name } = value
+                    const { handleChange, name, age } = value
                     return (
                         <section className="filter-container">
                             <section style={{ marginBottom: '2rem' }}>
@@ -25,6 +25,20 @@ const LearningVideosFilter = ({ learning }) => {
                                         <option value='all'>All</option>
                                         <option value='Hindi'>Hindi</option>
                                         <option value='English'>English</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <form className="filter-form">
+                                <div className="form-group">
+                                    <label htmlFor="age">Age: </label>
+                                    <input type='number' value={age} name='age' id='age' className='form-control' onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="category">Category: </label>
+                                    <select name="category" id="category" className="form-control" onChange={handleChange}>
+                                        <option value='all'>All</option>
+                                        <option value='Story'>Stories</option>
+                                        <option value='Poem'>Poems</option>
                                     </select>
                                 </div>
                             </form>

@@ -7,7 +7,7 @@ import LearningImage from '../Assets/Hero/learning.png'
 const LearningPage = () => {
     return (
         <React.Fragment>
-            <Hero img={LearningImage} max={true} />
+            <Hero img={LearningImage} max='true' />
             <AllLearningVideos />
         </React.Fragment>
     )

@@ -8,7 +8,7 @@ const CartoonsFilter = ({ cartoons }) => {
         <CartoonFilterWrapper>
             <CartoonsConsumer>
                 {value => {
-                    const { handleChange, cartoon } = value
+                    const { handleChange, cartoon, age } = value
                     return (
                         <section className="filter-container">
                             <section style={{ marginBottom: '2rem' }}>
@@ -18,6 +18,10 @@ const CartoonsFilter = ({ cartoons }) => {
                                 <div className="form-group">
                                     <label htmlFor="cartoon">Cartoon Name: </label>
                                     <input type='text' value={cartoon} name='cartoon' id='cartoon' className='form-control' onChange={handleChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="age">Age: </label>
+                                    <input type='number' value={age} name='age' id='age' className='form-control' onChange={handleChange} />
                                 </div>
                             </form>
                         </section>

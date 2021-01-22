@@ -12,7 +12,9 @@ class LearningProvider extends Component {
         loading: true,
 
         name: '',
-        language: ''
+        age: '',
+        language: 'all',
+        category: 'all',
     }
 
     getData = async () => {
@@ -21,7 +23,6 @@ class LearningProvider extends Component {
                 content_type: "movieToonsLearning"
             });
             let learningVideos = this.formatData(response.items);
-            console.log(learningVideos)
             let featuredLearning = learningVideos.filter(learning => learning.featured === true)
             this.setState({
                 learningVideos,
@@ -67,7 +68,7 @@ class LearningProvider extends Component {
 
     filterVideos = () => {
         let {
-            learningVideos, name, language
+            learningVideos, name, age, language, category
         } = this.state;
         let tempVideos = [...learningVideos];
 
@@ -79,8 +80,16 @@ class LearningProvider extends Component {
             })
         }
 
+        if (age) {
+            tempVideos = tempVideos.filter(item => age >= item.minAge)
+        }
+
         if (language !== 'all') {
             tempVideos = tempVideos.filter(item => item.language === language)
+        }
+
+        if (category !== 'all') {
+            tempVideos = tempVideos.filter(item => item.category.toLowerCase() === category.toLowerCase())
         }
 
         this.setState({

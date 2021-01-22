@@ -11,7 +11,8 @@ class CartoonsProvider extends Component {
         sortedCartoons: [],
         loading: true,
 
-        cartoon: ''
+        cartoon: '',
+        age: '',
     }
 
     getData = async () => {
@@ -90,7 +91,7 @@ class CartoonsProvider extends Component {
 
     filterCartoons = () => {
         let {
-            cartoons, cartoon
+            cartoons, cartoon, age
         } = this.state;
         let tempCartoons = [...cartoons];
 
@@ -101,6 +102,11 @@ class CartoonsProvider extends Component {
                 return tempTitle === tempSearch;
             })
         }
+
+        if (age) {
+            tempCartoons = tempCartoons.filter(item => age >= item.minAge)
+        }
+
         this.setState({
             sortedCartoons: tempCartoons
         })
