@@ -6,6 +6,7 @@ import HomeBg from '../Assets/background/home-bg.jpg'
 import FeaturedCartoons from '../Components/CartoonsPage/FeaturedCartoons'
 import Title from '../Components/Title'
 import FeaturedLearningVideos from '../Components/LearningPage/FeaturedLearningVideos'
+import FeaturedQuizzes from '../Components/QuizPage/FeaturedQuizzes'
 
 const HomePage = () => {
     return (
@@ -23,6 +24,10 @@ const HomePage = () => {
                     <Title title='Featured Learning Videos' />
                 </section>
                 <FeaturedLearningVideos />
+                <section>
+                    <Title title='Featured Quizzes' />
+                </section>
+                <FeaturedQuizzes />
             </HomePageWrapper>
         </React.Fragment>
     )

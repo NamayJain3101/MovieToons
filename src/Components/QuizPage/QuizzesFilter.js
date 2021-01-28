@@ -1,45 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
-import { LearningConsumer } from '../../Context/LearningContext'
+import { QuizzesConsumer } from '../../Context/QuizContext'
 import Title from '../Title'
 
 const getUnique = (items, value) => {
     return [...new Set(items.map(item => item[value]))]
 }
 
-const LearningVideosFilter = ({ learning }) => {
+const QuizzesFilter = ({ quizzes }) => {
 
-    let categories = getUnique(learning, 'category');
+    let categories = getUnique(quizzes, 'category');
     categories = ['all', ...categories];
 
-    let language = getUnique(learning, 'language');
-    language = ['all', ...language];
-
     return (
-        <LearningVideoFilterWrapper>
-            <LearningConsumer>
+        <QuizzesFilterWrapper>
+            <QuizzesConsumer>
                 {value => {
-                    const { handleChange, name, age } = value
+                    const { handleChange, quizName, age } = value
                     return (
                         <section className="filter-container">
                             <section style={{ marginBottom: '2rem' }}>
-                                <Title title="Search Seasons" />
+                                <Title title="Search Quiz" />
                             </section>
                             <form className="filter-form">
                                 <div className="form-group">
-                                    <label htmlFor="name">Name: </label>
-                                    <input type='text' value={name} name='name' id='name' className='form-control' onChange={handleChange} />
+                                    <label htmlFor="quizName">Quiz Name: </label>
+                                    <input type='text' value={quizName} name='quizName' id='quizName' className='form-control' onChange={handleChange} />
                                 </div>
-                                <div className="form-group">
-                                    <label htmlFor="language">Language: </label>
-                                    <select name="language" id="language" className="form-control" onChange={handleChange}>
-                                        {language.map((item, index) => {
-                                            return <option value={item} key={index}>{item.toString().toUpperCase()}</option>
-                                        })}
-                                    </select>
-                                </div>
-                            </form>
-                            <form className="filter-form">
                                 <div className="form-group">
                                     <label htmlFor="age">Age: </label>
                                     <input type='number' value={age} name='age' id='age' className='form-control' onChange={handleChange} />
@@ -56,12 +43,12 @@ const LearningVideosFilter = ({ learning }) => {
                         </section>
                     )
                 }}
-            </LearningConsumer>
-        </LearningVideoFilterWrapper>
+            </QuizzesConsumer>
+        </QuizzesFilterWrapper>
     )
 }
 
-const LearningVideoFilterWrapper = styled.div`
+const QuizzesFilterWrapper = styled.div`
     .filter-container {
         padding: 5rem 0 0 0;
     }
@@ -110,4 +97,4 @@ const LearningVideoFilterWrapper = styled.div`
     }
 `
 
-export default LearningVideosFilter
+export default QuizzesFilter

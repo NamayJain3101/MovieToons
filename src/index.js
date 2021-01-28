@@ -6,16 +6,19 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { CartoonsProvider } from './Context/CartoonsContext';
 import { LearningProvider } from './Context/LearningContext';
+import { QuizzesProvider } from './Context/QuizContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartoonsProvider>
-      <LearningProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </LearningProvider>
-    </CartoonsProvider>
+    <QuizzesProvider>
+      <CartoonsProvider>
+        <LearningProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </LearningProvider>
+      </CartoonsProvider>
+    </QuizzesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
