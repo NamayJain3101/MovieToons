@@ -6,7 +6,7 @@ import GamesImage from '../Assets/Hero/games.png'
 const GamesPage = () => {
     return (
         <React.Fragment>
-            <Hero img={GamesImage} max={true} />
+            <Hero img={GamesImage} max="true" />
         </React.Fragment>
     )
 }

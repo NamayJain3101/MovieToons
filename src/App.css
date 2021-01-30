@@ -105,3 +105,47 @@ body {
         margin-top: 115px;
     }
 }
+
+.react-confirm-alert {
+    background: cyan;
+    box-shadow: 2px 2px 20px 2px grey;
+    border-radius: 1rem !important;
+}
+
+.react-confirm-alert-body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem !important;
+    background: cyan !important;
+    color: black !important;
+}
+
+.react-confirm-alert-body * {
+    text-align: center !important;
+    color: black !important;
+}
+
+.react-confirm-alert-body h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem;
+}
+
+.react-confirm-alert-button-group button {
+    background: blue !important;
+    color: white !important;
+    margin: 0 1rem !important;
+    width: 100px !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+}
+
+@media(max-width: 500px) {
+    .react-confirm-alert {
+        max-width: 320px;
+    }
+    .react-confirm-alert-body {
+        max-width: 320px;
+    }
+}

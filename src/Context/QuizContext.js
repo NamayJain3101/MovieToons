@@ -88,11 +88,29 @@ class QuizzesProvider extends Component {
     }
 
     getQuiz = (quizName) => {
-        let tempQuizzes = [...this.state.quizzes];
+        let tempQuizzes = [...this.state.quizzes]
         const quiz = tempQuizzes.find((quiz) => {
             return quiz.name === quizName;
         });
         return quiz;
+    }
+    getQues = (quizName, ques) => {
+        const indexes = []
+        let tempQuizzes = [...this.state.quizzes]
+        const quiz = tempQuizzes.find((quiz) => {
+            return quiz.name === quizName;
+        });
+        while (indexes.length < ques) {
+            const r = Math.floor(Math.random() * quiz.questions.length);
+            if (indexes.indexOf(r) === -1) {
+                indexes.push(r)
+            }
+        }
+        const questions = []
+        indexes.map(index => {
+            return questions.push(quiz.questions[index])
+        })
+        return questions
     }
 
     render() {
@@ -100,7 +118,8 @@ class QuizzesProvider extends Component {
             <QuizzesContext.Provider value={{
                 ...this.state,
                 handleChange: this.handleChange,
-                getQuiz: this.getQuiz
+                getQuiz: this.getQuiz,
+                getQues: this.getQues
             }}>
                 {this.props.children}
             </QuizzesContext.Provider>
