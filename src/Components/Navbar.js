@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { NavLinksData } from '../Context/NavLinksData'
+import { withRouter } from 'react-router-dom';
 
 import GrassImg from '../Assets/grass.png'
-export default class Navbar extends Component {
+import LogoImg from '../Assets/logo.png'
+class Navbar extends Component {
 
     closeNavbar = () => {
         document.querySelector('.toggler').checked = false;
@@ -14,7 +16,9 @@ export default class Navbar extends Component {
         return (
             <NavWrapper>
                 <nav id="main-nav">
-                    <h1><span>MOVIETOONS</span></h1>
+                    <div>
+                        <img src={LogoImg} alt="logo" className="logo" style={{ cursor: 'pointer' }} onClick={() => this.props.history.push('/')} />
+                    </div>
                     <ul>
                         {
                             NavLinksData.map(link => {
@@ -30,7 +34,7 @@ export default class Navbar extends Component {
                         }
                     </ul>
                 </nav>
-                <h1 className="logo">MOVIETOONS</h1>
+                <img src={LogoImg} alt="logo" className="logo" style={{ cursor: 'pointer' }} onClick={() => this.props.history.push('/')} />
                 <div className="menu-wrap">
                     <input type="checkbox" className="toggler" />
                     <div className="hamburger"><div></div></div>
@@ -61,6 +65,8 @@ export default class Navbar extends Component {
     }
 }
 
+export default withRouter(Navbar);
+
 const NavWrapper = styled.header`
     position: relative;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -80,10 +86,12 @@ const NavWrapper = styled.header`
     .logo {
         padding: 0.5rem;
         position: fixed;
-        right: 0;
-        top: 1.5rem;
+        right: -2rem;
+        top: -4.5rem;
         line-height: 1;
         z-index: 99999;
+        width: 250px;
+        height: 250px;
     }
 
     #main-nav {
@@ -101,12 +109,19 @@ const NavWrapper = styled.header`
         align-items: center;
     }
 
-    #main-nav h1 {
-        display: flex;
+    #main-nav img {
+        /* display: flex;
         align-items: center;
         margin-bottom: 0;
         font-size: 1.5em;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+        display: flex;
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        top: -4.2rem;
+        left: 0;
+        z-index: 999999;
     }
 
     #main-nav ul{
