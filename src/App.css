@@ -18,20 +18,6 @@ body {
     background: white;
 }
 
-.btn-primary {
-    display: inline-block;
-    text-decoration: none;
-    letter-spacing: var(--mainSpacing);
-    color: white;
-    font-weight: bold;
-    background: transparent;
-    padding: 0.4rem 0.9rem;
-    border: 2px solid pink;
-    transition: var(--mainTransition);
-    text-transform: uppercase;
-    cursor: pointer;
-}
-
 .btn-secondary {
     display: inline-block;
     text-decoration: none;
@@ -46,13 +32,10 @@ body {
     cursor: pointer;
 }
 
-.btn-primary:hover {
-    background: var(--primaryColor);
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: blueviolet;
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+    background: blueviolet !important;
     color: white;
 }
 

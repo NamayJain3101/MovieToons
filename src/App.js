@@ -16,6 +16,8 @@ import LearningVideoPage from './Pages/LearningVideoPage';
 import SingleQuizPage from './Pages/SingleQuizPage';
 import QuizQuestionsPage from './Pages/QuizQuestionsPage';
 import QuizScorePage from './Pages/QuizScorePage';
+import Hangman from './Games/Hangman/Hangman';
+import Footer from './Components/Footer';
 
 class App extends Component {
 	render() {
@@ -31,11 +33,13 @@ class App extends Component {
 					<Route exact path='/quiz/:name' component={SingleQuizPage} />
 					<Route exact path='/quiz/:name/score' component={QuizScorePage} />
 					<Route exact path='/quiz/:name/:ques' component={QuizQuestionsPage} />
-					<Route exact path='/games' component={GamesPage} />
 					<Route exact path='/learning' component={LearningPage} />
 					<Route exact path='/learning/:name' component={LearningVideoPage} />
+					<Route exact path='/games' component={GamesPage} />
+					<Route exact path='/games/hangman' component={Hangman} />
 					<Route component={ErrorPage} />
 				</Switch>
+				<Footer />
 			</React.Fragment>
 		)
 	}

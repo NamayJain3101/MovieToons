@@ -1,0 +1,123 @@
+.hangmanContainer {
+    padding: 1px;
+    background: cyan !important;
+}
+
+.Hangman {
+    width: 80%;
+    margin: 1.2rem auto;
+    background: rgb(179, 245, 245);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    position: relative;
+    padding: 1rem;
+}
+
+.cityName {
+    margin: 1.8rem 0;
+    padding: 0.65rem 0.65rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    background: rgba(80, 139, 17, 0.664);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    letter-spacing: 2px;
+}
+
+.wordG {
+    display: inline;
+    padding: 0.15rem 0.85rem;
+    color: #494646;
+    font-size: 2rem;
+    border: 3px groove rgba(211, 148, 11, 0.644);
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+}
+
+.wrongG {
+    margin: 1rem 0.8rem;
+    padding: 0.5rem 0.75rem;
+    color: #ebf3f7;
+    font-size: 1rem;
+    background: var(--danger);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    height: 45px;
+}
+
+.highscore {
+    margin: 1rem 0.8rem;
+    padding: 0.5rem 0.75rem;
+    width: 200px;
+    text-align: center;
+    color: cyan;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: var(--dark);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 4px);
+    -webkit-backdrop-filter: blur( 4px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    height: 45px;
+    cursor: default;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrongG svg {
+    margin: 2px;
+}
+
+.gameS {
+    color: #d1bf1fcb;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.guess {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2rem auto;
+    margin-top: -1rem;
+}
+
+@media(max-width: 600px) {
+    .guess {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 2rem auto;
+        margin-top: -3rem;
+    }
+    .guess>div {
+        margin: 2rem auto;
+    }
+    .score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+}
