@@ -18,6 +18,9 @@ import QuizQuestionsPage from './Pages/QuizQuestionsPage';
 import QuizScorePage from './Pages/QuizScorePage';
 import Hangman from './Games/Hangman/Hangman';
 import Footer from './Components/Footer';
+import Snake from './Games/Snake/snake';
+import SlidingPuzzle from './Games/SlidingPuzzle/SlidingPuzzle';
+import RockPaperScissor from './Games/RockPaperScissor/RockPaperScissor';
 
 class App extends Component {
 	render() {
@@ -37,6 +40,8 @@ class App extends Component {
 					<Route exact path='/learning/:name' component={LearningVideoPage} />
 					<Route exact path='/games' component={GamesPage} />
 					<Route exact path='/games/hangman' component={Hangman} />
+					<Route exact path='/games/snake' component={Snake} />
+					<Route path='/games/rock-paper-scissor' component={RockPaperScissor} />
 					<Route component={ErrorPage} />
 				</Switch>
 				<Footer />

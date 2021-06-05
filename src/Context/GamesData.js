@@ -1,5 +1,6 @@
 import Hangman from '../Components/GamesPage/Images/hangman.png'
 import Snake from '../Components/GamesPage/Images/snake.png'
+import RockPaperScissor from '../Components/GamesPage/Images/rockpaperscissor.jpg'
 
 export const GamesData = [{
         id: 1,
@@ -12,5 +13,11 @@ export const GamesData = [{
         name: 'Snake',
         link: '/games/snake',
         image: `${Snake}`
+    },
+    {
+        id: 3,
+        name: 'Rock Paper Scissor',
+        link: '/games/rock-paper-scissor',
+        image: `${RockPaperScissor}`
     }
 ]
