@@ -19,7 +19,6 @@ import QuizScorePage from './Pages/QuizScorePage';
 import Hangman from './Games/Hangman/Hangman';
 import Footer from './Components/Footer';
 import Snake from './Games/Snake/snake';
-import SlidingPuzzle from './Games/SlidingPuzzle/SlidingPuzzle';
 import RockPaperScissor from './Games/RockPaperScissor/RockPaperScissor';
 
 class App extends Component {

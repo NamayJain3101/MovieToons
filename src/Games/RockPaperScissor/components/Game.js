@@ -51,6 +51,7 @@ const Game = ({ score, myChoice, setScore }) => {
     return () => {
       clearInterval(timer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter, house]);
 
   return (
