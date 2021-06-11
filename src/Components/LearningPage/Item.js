@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 const Item = ({ learning }) => {
 
-    const { name, video } = learning;
+    const { name, imageUrl } = learning;
+    console.log(imageUrl)
 
     return (
         <ItemWrapper>
             <article className="cartoon">
                 <div className="img-container">
-                    <video src={video} autoPlay muted />
+                    <img src={imageUrl} alt={name} className='img-fluid' />
                     <div className="sno-top">
                         <h6>{name}</h6>
                     </div>

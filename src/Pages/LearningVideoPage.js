@@ -43,7 +43,7 @@ const LearningVideoPage = ({ match }) => {
                                         pip
                                         playing
                                         width={window.screen.width < 800 ? "80%" : "50%"}
-                                        height="auto"
+                                        height="350px"
                                     />
                                 </div>
                                 <div className="btn-center">

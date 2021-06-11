@@ -43,8 +43,8 @@ class LearningProvider extends Component {
     formatData = (items) => {
         let tempItems = items.map(item => {
             let id = item.sys.id;
-            let video = item.fields.video.fields.file.url
-            let learningVideo = { ...item.fields, id, video };
+            let image = item.fields && item.fields.image && item.fields.image.fields && item.fields.image.fields.file && item.fields.image.fields.file.url
+            let learningVideo = { ...item.fields, id, imageUrl: image };
             return learningVideo;
         })
         return tempItems;
