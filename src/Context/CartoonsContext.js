@@ -42,17 +42,7 @@ class CartoonsProvider extends Component {
         let tempItems = items.map(item => {
             let id = item.sys.id;
             let image = item.fields.image.fields.file.url;
-            let episodes;
-            if (item.fields.episodes) {
-                episodes = item.fields.episodes.map((video, index) => {
-                    return ({
-                        episodeNo: (index + 1),
-                        episodeName: video.fields.title,
-                        episode: video.fields.file.url
-                    })
-                })
-            }
-            let season = { ...item.fields, image, id, episodes };
+            let season = { ...item.fields, image, id };
             return season;
         })
         return tempItems;
