@@ -12,7 +12,7 @@ class LearningProvider extends Component {
         loading: true,
 
         name: '',
-        age: '',
+        age: 'all',
         language: 'all',
         category: 'all',
     }
@@ -80,8 +80,12 @@ class LearningProvider extends Component {
             })
         }
 
-        if (age) {
-            tempVideos = tempVideos.filter(item => age >= item.minAge)
+        if (age !== "all") {
+            const minAge = age.split("-")[0]
+            const maxAge = age.split("-")[1]
+            tempVideos = tempVideos.filter((item) => {
+                return ((maxAge >= item.maxAge) && (minAge <= item.minAge))
+            })
         }
 
         if (language !== 'all') {

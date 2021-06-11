@@ -23,7 +23,9 @@ const LearningVideoPage = ({ match }) => {
                         </div>
                     }
 
-                    const { video } = learningVideo
+                    console.log(learningVideo)
+
+                    const { video, courtesy } = learningVideo
 
                     if (loading) {
                         return <Loading title={`Loading ${learningVideoName}`} />
@@ -34,6 +36,7 @@ const LearningVideoPage = ({ match }) => {
                             <div className="single-episode">
                                 <section style={{ paddingTop: '1rem' }}>
                                     <Title title={learningVideoName} />
+                                    <p>(Courtesy: {courtesy || "Youtube"})</p>
                                 </section>
                                 <div className="video-container">
                                     <ReactPlayer

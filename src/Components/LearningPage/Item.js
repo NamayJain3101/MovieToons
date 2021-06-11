@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Item = ({ learning }) => {
 
     const { name, imageUrl } = learning;
-    console.log(imageUrl)
 
     return (
         <ItemWrapper>
