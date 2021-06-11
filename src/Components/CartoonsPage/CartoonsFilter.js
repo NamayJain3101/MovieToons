@@ -21,7 +21,13 @@ const CartoonsFilter = ({ cartoons }) => {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="age">Age: </label>
-                                    <input type='number' value={age} name='age' id='age' className='form-control' onChange={handleChange} />
+                                    <select name="age" id="age" value={age} className="form-control" onChange={handleChange}>
+                                        <option value={"all"}>All</option>
+                                        <option value={"1-3"}>1 - 3</option>
+                                        <option value={"4-6"}>4 - 6</option>
+                                        <option value={"7-9"}>7 - 9</option>
+                                        <option value={"10-12"}>10 - 12</option>
+                                    </select>
                                 </div>
                             </form>
                         </section>

@@ -12,7 +12,7 @@ class CartoonsProvider extends Component {
         loading: true,
 
         cartoon: '',
-        age: '',
+        age: 'all',
     }
 
     getData = async () => {
@@ -103,8 +103,12 @@ class CartoonsProvider extends Component {
             })
         }
 
-        if (age) {
-            tempCartoons = tempCartoons.filter(item => age >= item.minAge)
+        if (age !== "all") {
+            const minAge = age.split("-")[0]
+            const maxAge = age.split("-")[1]
+            tempCartoons = tempCartoons.filter((item) => {
+                return ((maxAge >= item.maxAge) && (minAge <= item.minAge))
+            })
         }
 
         this.setState({

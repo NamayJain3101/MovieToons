@@ -40,7 +40,7 @@ const CartoonVideoPage = ({ match }) => {
                     }
 
                     const { episode: url, episodename: name, episodeNo: eno } = episode
-                    const { totalEpisodes } = cartoon
+                    const { totalEpisodes, courtesy } = cartoon
 
                     if (loading) {
                         return <Loading title={`${cartoonName} - ${name}`} />
@@ -51,6 +51,7 @@ const CartoonVideoPage = ({ match }) => {
                             <div className="single-episode">
                                 <section style={{ paddingTop: '1rem' }}>
                                     <Title title={cartoonName + " Episode " + eno} />
+                                    <p>(Courtesy: {courtesy || "Youtube"})</p>
                                 </section>
                                 <div className="video-container">
                                     <ReactPlayer

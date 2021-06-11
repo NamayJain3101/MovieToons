@@ -12,7 +12,7 @@ class QuizzesProvider extends Component {
         loading: true,
 
         quizName: '',
-        age: '',
+        age: 'all',
         category: 'all'
     }
 
@@ -74,8 +74,12 @@ class QuizzesProvider extends Component {
             })
         }
 
-        if (age) {
-            tempQuizzes = tempQuizzes.filter(item => age >= item.minAge)
+        if (age !== "all") {
+            const minAge = age.split("-")[0]
+            const maxAge = age.split("-")[1]
+            tempQuizzes = tempQuizzes.filter((item) => {
+                return ((maxAge >= item.maxAge) && (minAge <= item.minAge))
+            })
         }
 
         if (category !== 'all') {
@@ -94,6 +98,7 @@ class QuizzesProvider extends Component {
         });
         return quiz;
     }
+
     getQues = (quizName, ques) => {
         const indexes = []
         let tempQuizzes = [...this.state.quizzes]
