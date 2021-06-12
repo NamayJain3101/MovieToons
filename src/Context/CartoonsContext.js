@@ -41,7 +41,7 @@ class CartoonsProvider extends Component {
     formatData = (items) => {
         let tempItems = items.map(item => {
             let id = item.sys.id;
-            let image = item.fields.image.fields.file.url;
+            let image = item.fields && item.fields.image && item.fields.image.fields && item.fields.image.fields.file && item.fields.image.fields.file.url
             let season = { ...item.fields, image, id };
             return season;
         })
