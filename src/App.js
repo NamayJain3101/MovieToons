@@ -19,6 +19,8 @@ import QuizScorePage from './Pages/QuizScorePage';
 import Hangman from './Games/Hangman/Hangman';
 import Footer from './Components/Footer';
 import Snake from './Games/Snake/snake';
+import Board from './Games/Breakout/Game/Board';
+import TicTacToe from './Games/TicTacToe/Game';
 import RockPaperScissor from './Games/RockPaperScissor/RockPaperScissor';
 
 class App extends Component {
@@ -40,6 +42,8 @@ class App extends Component {
 					<Route exact path='/games' component={GamesPage} />
 					<Route exact path='/games/hangman' component={Hangman} />
 					<Route exact path='/games/snake' component={Snake} />
+					<Route exact path='/games/breakout' component={Board} />
+					<Route exact path='/games/tic-tac-toe' component={TicTacToe} />
 					<Route path='/games/rock-paper-scissor' component={RockPaperScissor} />
 					<Route component={ErrorPage} />
 				</Switch>

@@ -19,5 +19,17 @@ export const GamesData = [{
         name: 'Rock Paper Scissor',
         link: '/games/rock-paper-scissor',
         image: `${RockPaperScissor}`
+    },
+    {
+        id: 4,
+        name: 'Breakout',
+        link: '/games/breakout',
+        image: `${RockPaperScissor}`
+    },
+    {
+        id: 5,
+        name: 'Tic-Tac-Toe',
+        link: '/games/tic-tac-toe',
+        image: `${RockPaperScissor}`
     }
 ]
