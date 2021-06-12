@@ -1,5 +1,7 @@
 import Hangman from '../Components/GamesPage/Images/hangman.png'
 import Snake from '../Components/GamesPage/Images/snake.png'
+import TicTacToe from '../Components/GamesPage/Images/tictactoe.png'
+import Breakout from '../Components/GamesPage/Images/breakout.png'
 import RockPaperScissor from '../Components/GamesPage/Images/rockpaperscissor.jpg'
 
 export const GamesData = [{
@@ -24,12 +26,12 @@ export const GamesData = [{
         id: 4,
         name: 'Breakout',
         link: '/games/breakout',
-        image: `${RockPaperScissor}`
+        image: `${Breakout}`
     },
     {
         id: 5,
         name: 'Tic-Tac-Toe',
         link: '/games/tic-tac-toe',
-        image: `${RockPaperScissor}`
+        image: `${TicTacToe}`
     }
 ]
