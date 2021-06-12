@@ -30,6 +30,7 @@ const CartoonVideoPage = ({ match }) => {
                 {value => {
                     const { getCartoon, getEpisode, loading } = value
                     const cartoon = getCartoon(cartoonName)
+                    console.log(episodeNo)
                     const episode = getEpisode(cartoonName, episodeNo)
 
                     if (!episode) {
@@ -38,7 +39,7 @@ const CartoonVideoPage = ({ match }) => {
                             <Link to='/cartoons' className="btn-secondary">Back to Seasons</Link>
                         </div>
                     }
-
+                    console.log(episode)
                     const { episode: url, episodename: name, episodeNo: eno } = episode
                     const { totalEpisodes, courtesy } = cartoon
 
@@ -61,7 +62,7 @@ const CartoonVideoPage = ({ match }) => {
                                         pip
                                         playing
                                         width={window.screen.width < 800 ? "80%" : "50%"}
-                                        height="auto"
+                                        height="350px"
                                     />
                                 </div>
                                 <div className="episode-change">

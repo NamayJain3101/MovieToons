@@ -61,10 +61,9 @@ class CartoonsProvider extends Component {
         const cartoon = tempcartoons.find((cartoon) => {
             return cartoon.name === cartoonName;
         });
-        console.log(cartoon)
         if (cartoon) {
             const { episodes } = cartoon
-            const episode = episodes.find(item => item.episodeNo === episodeNo)
+            const episode = episodes.find(item => item.episodeNo === episodeNo.toString())
             return episode
         }
     }
