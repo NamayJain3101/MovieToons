@@ -3,30 +3,33 @@ import { Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './App.css';
-import Navbar from './Components/Navbar';
-import CartoonPage from './Pages/CartoonPage';
-import ErrorPage from './Pages/ErrorPage';
-import GamesPage from './Pages/GamesPage';
-import HomePage from './Pages/HomePage';
-import QuizPage from './Pages/QuizPage';
-import LearningPage from './Pages/LearningPage';
-import CartoonsEpisodesPage from './Pages/CartoonsEpisodesPage';
-import CartoonVideoPage from './Pages/CartoonVideoPage';
-import LearningVideoPage from './Pages/LearningVideoPage';
-import SingleQuizPage from './Pages/SingleQuizPage';
-import QuizQuestionsPage from './Pages/QuizQuestionsPage';
-import QuizScorePage from './Pages/QuizScorePage';
-import Hangman from './Games/Hangman/Hangman';
-import Footer from './Components/Footer';
-import Snake from './Games/Snake/snake';
-import Board from './Games/Breakout/Game/Board';
-import TicTacToe from './Games/TicTacToe/Game';
-import RockPaperScissor from './Games/RockPaperScissor/RockPaperScissor';
+import Loading from './Components/Loading';
+
+const Navbar = React.lazy(() => import('./Components/Navbar'))
+const Footer = React.lazy(() => import('./Components/Footer'))
+
+const ErrorPage = React.lazy(() => import('./Pages/ErrorPage'))
+const CartoonPage = React.lazy(() => import('./Pages/CartoonPage'))
+const GamesPage = React.lazy(() => import('./Pages/GamesPage'))
+const HomePage = React.lazy(() => import('./Pages/HomePage'))
+const QuizPage = React.lazy(() => import('./Pages/QuizPage'))
+const LearningPage = React.lazy(() => import('./Pages/LearningPage'))
+const LearningVideoPage = React.lazy(() => import('./Pages/LearningVideoPage'))
+const CartoonsEpisodesPage = React.lazy(() => import('./Pages/CartoonsEpisodesPage'))
+const CartoonVideoPage = React.lazy(() => import('./Pages/CartoonVideoPage'))
+const SingleQuizPage = React.lazy(() => import('./Pages/SingleQuizPage'))
+const QuizQuestionsPage = React.lazy(() => import('./Pages/QuizQuestionsPage'))
+const QuizScorePage = React.lazy(() => import('./Pages/QuizScorePage'))
+const Hangman = React.lazy(() => import('./Games/Hangman/Hangman'))
+const Snake = React.lazy(() => import('./Games/Snake/snake'))
+const Board = React.lazy(() => import('./Games/Breakout/Game/Board'))
+const TicTacToe = React.lazy(() => import('./Games/TicTacToe/Game'))
+const RockPaperScissor = React.lazy(() => import('./Games/RockPaperScissor/RockPaperScissor'))
 
 class App extends Component {
 	render() {
 		return (
-			<React.Fragment>
+			<React.Suspense fallback={<Loading title="Loading..." />}>
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={HomePage} />
@@ -48,7 +51,7 @@ class App extends Component {
 					<Route component={ErrorPage} />
 				</Switch>
 				<Footer />
-			</React.Fragment>
+			</React.Suspense>
 		)
 	}
 }
