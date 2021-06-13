@@ -22,7 +22,6 @@ class QuizzesProvider extends Component {
                 content_type: "movieToonsQuiz"
             });
             let quizzes = this.formatData(response.items);
-            console.log(quizzes)
             let featuredQuiz = quizzes.filter(quiz => quiz.featured === true)
             this.setState({
                 quizzes,

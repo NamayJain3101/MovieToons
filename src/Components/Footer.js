@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
         <FooterWrapper>
             <footer className='text-center'>
                 <p>Copyright &copy; MovieToons 2021</p>
+                <Link to='/contact-us'>Contact Us</Link>
             </footer>
         </FooterWrapper>
     )

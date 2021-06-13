@@ -4,7 +4,6 @@ import Title from '../Title'
 import Item from './Item'
 
 const QuizzesList = ({ quizzes }) => {
-    console.log(quizzes)
     if (quizzes.length === 0) {
         return (
             <div className="empty-search">

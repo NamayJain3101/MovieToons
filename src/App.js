@@ -7,6 +7,7 @@ import Loading from './Components/Loading';
 
 const Navbar = React.lazy(() => import('./Components/Navbar'))
 const Footer = React.lazy(() => import('./Components/Footer'))
+const ContactUs = React.lazy(() => import('./Pages/ContactUsPage'))
 
 const ErrorPage = React.lazy(() => import('./Pages/ErrorPage'))
 const CartoonPage = React.lazy(() => import('./Pages/CartoonPage'))
@@ -33,6 +34,7 @@ class App extends Component {
 				<Navbar />
 				<Switch>
 					<Route exact path='/' component={HomePage} />
+					<Route exact path='/contact-us' component={ContactUs} />
 					<Route exact path='/cartoons' component={CartoonPage} />
 					<Route exact path='/cartoons/:name' component={CartoonsEpisodesPage} />
 					<Route exact path='/cartoons/:name/:episodeNo' component={CartoonVideoPage} />

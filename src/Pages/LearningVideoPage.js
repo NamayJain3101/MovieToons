@@ -23,8 +23,6 @@ const LearningVideoPage = ({ match }) => {
                         </div>
                     }
 
-                    console.log(learningVideo)
-
                     const { video, courtesy } = learningVideo
 
                     if (loading) {

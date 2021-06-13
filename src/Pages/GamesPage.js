@@ -8,7 +8,6 @@ import { GamesData } from '../Context/GamesData'
 import Item from '../Components/GamesPage/Item'
 
 const GamesPage = () => {
-    console.log(GamesData)
     return (
         <React.Fragment>
             <Hero img={GamesImage} max="true" />
