@@ -101,14 +101,14 @@ const EpisodeWrapper = styled.div`
     }
 
     .episode-change>.episode-link {
-        background: aqua;
+        background: navy;
+        color: white;
         width: auto;
         margin: 3rem 1rem 0rem 1rem;
         letter-spacing: 2px;
         border-radius: 0;
         font-size: 2rem;
         padding: 0.5rem;
-        color: black;
     }
 
     .episode-change>.episode-link:hover {

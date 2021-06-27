@@ -40,26 +40,12 @@ const GamesListWrapper = styled.div`
     }
 
     .gameslist-center {
-        width: 80vw;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-        grid-row-gap: 2rem;
-        grid-column-gap: 30px;
-    }
-
-    @media screen and (min-width: 776px) {
-        .gameslist-center {
-            width: 90vw;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-        }
-    }
-
-    @media screen and (min-width: 992px) {
-        .gameslist-center {
-            width: 95vw;
-            max-width: 1170px;
-        }
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 1400px;
+        margin: auto;
     }
 `
 

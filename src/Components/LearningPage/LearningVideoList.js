@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Title from '../Title'
 import Item from './Item'
+import Pagination from "react-js-pagination";
 
 const LearningVideoList = ({ learning }) => {
+    const [pageNumber, setPageNumber] = useState(1)
+    const pages = Math.ceil(learning.length / 15)
+    const [videos, setVideos] = useState(learning)
+
+    const getPageVideos = () => {
+        const lIndex = (pageNumber - 1) * 15;
+        const rIndex = pageNumber * 15;
+        setVideos(learning.filter((video, index) => index >= lIndex && index < rIndex))
+    }
+
+    useEffect(() => {
+        setPageNumber(1)
+        getPageVideos()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [learning])
+
+    useEffect(() => {
+        getPageVideos()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [pageNumber])
+
     if (learning.length === 0) {
         return (
             <div className="empty-search">
@@ -19,12 +41,29 @@ const LearningVideoList = ({ learning }) => {
                 </section>
                 <div className="learningVideoList-center">
                     {
-                        learning.map(item => {
+                        videos.map(item => {
                             return <Item key={item.id} learning={item} />
                         })
                     }
                 </div>
             </section>
+            {pages > 1 && (
+                <Pagination
+                    hideDisabled
+                    hideFirstLastPages
+                    pageRangeDisplayed={4}
+                    activePage={pageNumber}
+                    itemsCountPerPage={15}
+                    totalItemsCount={learning.length}
+                    onChange={(page) => setPageNumber(page)}
+                    itemClass='page-item'
+                    linkClass='page-link'
+                    prevPageText='<'
+                    nextPageText='>'
+                    firstPageText='<<'
+                    lastPageText='>>'
+                />
+            )}
         </LearningVideoListWrapper>
     )
 }
@@ -60,6 +99,39 @@ const LearningVideoListWrapper = styled.div`
             width: 95vw;
             max-width: 1170px;
         }
+    }
+    .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .page-item {
+        width: 38px !important;
+        height: 38px !important;
+        margin: 0 7px;
+        margin-bottom: 10px;
+    }
+    .page-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .page-item, .page-link {
+        border-radius: 50% !important;
+        color: navy;
+        border-color: navy;
+    }
+    .page-item.active .page-link {
+        background-color: navy;
+        border-color: navy;
+        color: white;
+    }
+    .page-link:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 23, 128, 0.3);
+    }
+    .page-link:hover {
+        background-color: rgba(0, 23, 128, 0.3);
     }
 `
 

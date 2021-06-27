@@ -106,7 +106,7 @@ class Hangman extends Component {
                     </div>
                     <div className='text-center'>
                         <p className='gameS'>{gameStat}</p>
-                        <button className='btn btn-info m-2' onClick={this.resetButton}>Reset</button>
+                        <button className='btn btn-info m-2' onClick={this.resetButton}>Restart</button>
                     </div>
                 </div>
             </div>

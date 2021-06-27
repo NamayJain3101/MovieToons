@@ -22,6 +22,7 @@ const Item = ({ game }) => {
 
 const ItemWrapper = styled.article`
     width: 270px;
+    margin: 1rem;
     .game {
         box-shadow: 0px 0px 30px green;
         transition: var(--mainTransition);
@@ -29,7 +30,7 @@ const ItemWrapper = styled.article`
     }
 
     .game:hover {
-        box-shadow: 0px 0px 30px red;
+        box-shadow: 0px 0px 30px navy;
     }
 
     .img-container {
@@ -47,8 +48,8 @@ const ItemWrapper = styled.article`
         top: -2rem;
         left: 50%;
         transform: translateX(-50%);
-        background: aqua;
-        color: black;
+        background: navy;
+        color: white;
         padding: 0.6rem;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
