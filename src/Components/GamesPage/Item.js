@@ -48,8 +48,8 @@ const ItemWrapper = styled.article`
         top: -2rem;
         left: 50%;
         transform: translateX(-50%);
-        background: navy;
-        color: white;
+        background: cyan;
+        color: black;
         padding: 0.6rem;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;

@@ -34,7 +34,7 @@ const HomePage = () => {
 }
 
 const HomePageWrapper = styled.section`
-    background-image: linear-gradient(rgba(0,255,0, 0.2), rgba(0,255,0,0.2)) ,url(${HomeBg});
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url(${HomeBg});
     section {
         padding: 1rem 0;
     }
